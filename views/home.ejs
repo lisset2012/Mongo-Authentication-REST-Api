@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
+</head>
+<body>
+   <div class="nav">
+        <div>
+            Hi <%=user.name.split(' ')[0]%>
+        </div>
+        <div>
+            <a class="" href="/profile">Profile</a>
+            <a class="" href="/sign-out">Sign Out</a>
+        </div>
+   </div>
+   <div class="articles-container">
+                    <div class="articles-list">
+                        Lista de articulos
+                    </div>
+
+                    <!-- Escribir un articulo -->
+
+                    <div class="write-art">
+                        
+
+                        <form action="/write_art" method="post" class="write-art-form">
+                                            
+                                    <label for="art-title">Article Title</label>
+                                        <div id="art-title">
+                                            <input type="text" name="art-title" required/>
+                                        </div>
+
+                                    <label for="write-art">Article</label>
+                                        <div class="input-write-art">
+                                            <textarea type="text" name="write-art" class="write-art-input" required/>
+                                        </div>
+
+                                    <label for="author">Author</label>
+                                        <div id="author">
+                                            <input type="text" name="author" required/>
+                                        </div>
+
+                                    <label for="date">Date</label>
+                                        <div id="date">
+                                            <input type="datetime" name="date" required/>
+                                        </div>
+                                                    
+                                    <button type="submit" id="save-art">Save Article</button>
+                                    
+                        </form>
+
+                    </div>
+
+                <!-- Buscar un articulo -->
+
+                    <div class="articles-body">
+                            
+
+                                    <form action="/find_art_title" method="get">
+                                        <!-- <div id="find-art-title"> -->
+                                            
+                                                <label for="art-title">Article Title</label>
+                                                    <div class="input-art">
+                                                        <input type="text" name="art-title" class="art-title-input" required/>
+                                                    </div>
+                                    
+                                                        
+                                                <button type="submit" class="art-title-btn">Find Article by Title</button>
+                                        <!-- </div> -->
+                                        
+                                    </form>
+                            
+                    </div>
+        
+  </div>
+   
+    <script src="/main.js"></script>
+</body>
+</html>
